@@ -1,0 +1,4 @@
+a cet niveau nous avons avons crees les 3pages mais sans le react router dom 
+creer un repertoire css dans lequel nous aurons nos css, et app.css dans le repertoire ou nous allons importer les css
+j'ai aussi creer le repertoire pages ou se trouves toutes les pages du site .
+le repertoire components a ete cree , dans lequel nous avons notre premier component qui est menu.js
