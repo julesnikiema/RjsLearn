@@ -8,3 +8,18 @@ le repertoire components a ete cree , dans lequel nous avons notre premier compo
 - puis dans app js ajouter les routes 
 - on peut crrer les liens dans mENU.JS
  className={({ isActive }) => (isActive ? "activeLink" : undefined)} 
+============================================================================================================================
+ import {useState} from 'react'; les useState permet d'avoir des getters et des setters 
+
+ dans le parent app.js on creer un propshandleaddtechnos
+
+  props est un objet contenant la propriété handleaddtechnos, et en utilisant la déstructuration, vous extrayez la valeur de
+cette propriété dans une constante nommée handleaddtechnos
+
+** Dans APP on a cree un morceau d'etat a l'aide de useState aui commence avec un tableau vide parce qu'ensuite nous voulons avoir des 
+elements a l'interieur
+  const [getTechnos, setTechnos]= useState([ ]); on un getter et un setter 
+  ensuite on va apporter cette fonction a son enfant techno add : element={<Technoadd * handleaddtechnos={handleaddtechnos*}/>}
+
+  il faut s\assurer de pouvoir appeler cette fonction dans l'enfant(technoadd.js)
+

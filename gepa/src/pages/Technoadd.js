@@ -1,11 +1,32 @@
 import React from 'react';
 
-const Technoadd = () => {
+const Technoadd = (props) => {
+    // props est un objet contenant la propriété handleaddtechnos, et en utilisant la déstructuration, 
+    // vous extrayez la valeur de cette propriété dans une constante nommée handleaddtechnos
+
+    const {handleaddtechnos}  = props;
+    const techno = {
+        name:'react',
+        category:'front-end',
+        description:'learn about react'
+
+    };
+
+    function handleSubmit(evt) {
+        evt.preventDefault();
+        handleaddtechnos(techno);
+
+
+
+        
+    }
+
+
     return (
         <div className="technoadd" >
             <h1>Add a Techno</h1>
             <div>
-                <form>
+                <form onSubmit={ (evt)=> handleSubmit(evt) } >
                     <label htmlfor="techno-name" >Name :</label>
                     <br/>
                     <input type="text" name="techno-name" id="techno=name" />
@@ -26,7 +47,7 @@ const Technoadd = () => {
                     <br/>
                     <textarea name="techno-description" id="techno-description" cols="30" rows="10"></textarea>
                     <br/>
-                    <input type="submit" value="add techno" />
+                    <input type="submit" value="add techno" className="btn" />
                 </form>
             </div>
             
