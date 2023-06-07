@@ -1,3 +1,4 @@
+import {Routes, Route} from 'react-router-dom';
 import React from 'react';
 import Menu from './components/Menu';
 import './css/app.css';
@@ -7,12 +8,16 @@ import AllTechnos from "./pages/AllTechnos";
 
 const App = () => {
   return (
-    <>
-     <Menu />
-      <Home />
-      <Technoadd />
-      < AllTechnos  />
+    <> 
+    <Menu />
+    <Routes>
+    <Route path='/' element={<Home />} />
+    <Route path='/add' element={<Technoadd />} />
+    <Route path='/alltechno' element={< AllTechnos  />} />
+  </Routes>
     </>
+    
+
   );
 };
 
