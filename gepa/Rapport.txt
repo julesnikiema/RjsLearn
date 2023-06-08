@@ -22,4 +22,4 @@ elements a l'interieur
   ensuite on va apporter cette fonction a son enfant techno add : element={<Technoadd * handleaddtechnos={handleaddtechnos*}/>}
 
   il faut s\assurer de pouvoir appeler cette fonction dans l'enfant(technoadd.js)
-
+jouiuiui
