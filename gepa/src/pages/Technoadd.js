@@ -1,20 +1,29 @@
+import { useState } from 'react';
 import React from 'react';
 
 const Technoadd = (props) => {
+
+    const [technos, setTechnos] = useState({
+        technoName: '',
+        technoCategory: '',
+        technoDescription: ''
+      });
+      
+
+      function handleChange(evt) {
+        const { name, value } = evt.target;
+        setTechnos({ ...technos, [name]: value });
+        
+      }
     // props est un objet contenant la propriété handleaddtechnos, et en utilisant la déstructuration, 
     // vous extrayez la valeur de cette propriété dans une constante nommée handleaddtechnos
 
     const {handleaddtechnos}  = props;
-    const techno = {
-        name:'react',
-        category:'front-end',
-        description:'learn about react'
-
-    };
+   
 
     function handleSubmit(evt) {
         evt.preventDefault();
-        handleaddtechnos(techno);
+        handleaddtechnos(technos);
 
 
 
@@ -29,11 +38,11 @@ const Technoadd = (props) => {
                 <form onSubmit={ (evt)=> handleSubmit(evt) } >
                     <label htmlfor="techno-name" >Name :</label>
                     <br/>
-                    <input type="text" name="techno-name" id="techno=name" />
+                    <input type="text" name="technoName" id="technoName" value={technos.technoName} onChange={ handleChange} />
                     <br/>
-                    <label htmlFor="techno-category"  > category </label>
+                    <label htmlFor="technoCategory"  > category </label>
                     <br/>
-                    <select name="techno-category" id="techno-category" >
+                    <select name="technoCategory" id="technoCategory" value={technos.technoCategory} onChange={ handleChange} >
                         <option value=""> select a category </option>
                         <option value="Front" >Front</option>
                         <option value="Back" >Back</option>
@@ -43,9 +52,9 @@ const Technoadd = (props) => {
 
                     </select>
                     <br/>
-                    <label htmlFor="techno-description "  > Description </label>
+                    <label htmlFor="technoDescription "  > Description </label>
                     <br/>
-                    <textarea name="techno-description" id="techno-description" cols="30" rows="10"></textarea>
+                    <textarea name="technoDescription" id="technoDescription" cols="30" rows="10" value={technos.technoDescription} onChange={ handleChange} ></textarea>
                     <br/>
                     <input type="submit" value="add techno" className="btn" />
                 </form>
