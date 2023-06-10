@@ -8,9 +8,12 @@ import Technoadd from "./pages/Technoadd";
 import AllTechnos from "./pages/AllTechnos";
 
 const App = () => {
-  const [getTechnos, setTechnos]= useState([ ]);
-function handleaddtechnos(techno) {
-  console.log('handleaddtechnos', techno);
+  const [technos, setTechnos]= useState([ ]);
+  
+
+function handleAddtechnos(techno) {
+  // console.log('handleaddtechnos', techno);
+  setTechnos([...technos,  techno] );
   
 }
 
@@ -19,8 +22,8 @@ function handleaddtechnos(techno) {
     <Menu /> 
     <Routes>
     <Route path='/' element={<Home />} />
-    <Route path='/add' element={<Technoadd handleaddtechnos={handleaddtechnos}/>} />
-    <Route path='/alltechno' element={< AllTechnos  />} />
+    <Route path='/add' element={<Technoadd handleaddtechnos={handleAddtechnos}/>} />
+    <Route path='/alltechno' element={< AllTechnos technos={technos} />} />
   </Routes>
     </>
     

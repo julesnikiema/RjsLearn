@@ -24,6 +24,12 @@ const Technoadd = (props) => {
     function handleSubmit(evt) {
         evt.preventDefault();
         handleaddtechnos(technos);
+        setTechnos({
+            technoName: '',
+        technoCategory: '',
+        technoDescription: ''
+
+        });
 
 
 
@@ -36,7 +42,7 @@ const Technoadd = (props) => {
             <h1>Add a Techno</h1>
             <div>
                 <form onSubmit={ (evt)=> handleSubmit(evt) } >
-                    <label htmlfor="techno-name" >Name :</label>
+                    <label htmlFor="techno-name" >Name :</label>
                     <br/>
                     <input type="text" name="technoName" id="technoName" value={technos.technoName} onChange={ handleChange} />
                     <br/>

@@ -23,3 +23,6 @@ elements a l'interieur
 
   il faut s\assurer de pouvoir appeler cette fonction dans l'enfant(technoadd.js)
 jouiuiui
+============================================================================================================================
+
+lister les tecnologies dans la page qll technologie (partie1)
