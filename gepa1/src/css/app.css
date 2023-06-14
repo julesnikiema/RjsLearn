@@ -1,0 +1,5 @@
+/* nous importons ici les css de nos differentes pages  */
+@import './home.css';
+@import './menu.css';
+@import './technoadd.css';
+@import './alltechnos.css';
