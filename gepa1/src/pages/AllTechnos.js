@@ -1,4 +1,5 @@
 import React from 'react';
+import Technoitem from '../components/Technoitem';
 
 
 
@@ -13,13 +14,7 @@ const AllTechnos = (props) => {
         <div>
         {
   technos.map(techno => (
-    <div key={techno.id}>
-      <h3>{techno.technoName}</h3>
-      <h3>Category</h3>
-      <p>{techno.technoCategory}</p>
-      <h3>Description</h3>
-      <p>{techno.technoDescription}</p>
-    </div>
+   <Technoitem techno = {techno} key = {techno.technoid} />
   ))
 }
 
