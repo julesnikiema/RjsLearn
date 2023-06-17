@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Technoitem = (props) => {
-    const { techno } = props;
+    const { techno, handleDelete } = props;
 
     return (
         <div key={techno.id} className="card" >
@@ -10,6 +10,12 @@ const Technoitem = (props) => {
         <p>{techno.technoCategory}</p>
         <h3>Description</h3>
         <p>{techno.technoDescription}</p>
+        <div className="footer" >
+          <button className="btn-delete" onClick={()=> handleDelete(techno.technoid)}  >
+            delete
+          </button>
+        </div>
+
       </div>
     );
 };

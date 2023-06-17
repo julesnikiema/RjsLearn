@@ -1,70 +1,40 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+a cet niveau nous avons avons crees les 3pages mais sans le react router dom 
+creer un repertoire css dans lequel nous aurons nos css, et app.css dans le repertoire ou nous allons importer les css
+j'ai aussi creer le repertoire pages ou se trouves toutes les pages du site .
+le repertoire components a ete cree , dans lequel nous avons notre premier component qui est menu.js
+============================================================================================================================
+- Pour implementer le routage il faut npm install react-router-dom
+- ensuite dans index.js ajouter au sein   <React.StrictMode> BrowserRouter et l'importer from react-router-dom
+- puis dans app js ajouter les routes 
+- on peut crrer les liens dans mENU.JS
+ className={({ isActive }) => (isActive ? "activeLink" : undefined)} 
+============================================================================================================================
+ import {useState} from 'react'; les useState permet d'avoir des getters et des setters 
 
-## Available Scripts
+ dans le parent app.js on creer un propshandleaddtechnos
 
-In the project directory, you can run:
+  props est un objet contenant la propriété handleaddtechnos, et en utilisant la déstructuration, vous extrayez la valeur de
+cette propriété dans une constante nommée handleaddtechnos
 
-### `npm start`
+** Dans APP on a cree un morceau d'etat a l'aide de useState aui commence avec un tableau vide parce qu'ensuite nous voulons avoir des 
+elements a l'interieur
+  const [getTechnos, setTechnos]= useState([ ]); on un getter et un setter 
+  ensuite on va apporter cette fonction a son enfant techno add : element={<Technoadd * handleaddtechnos={handleaddtechnos*}/>}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  il faut s\assurer de pouvoir appeler cette fonction dans l'enfant(technoadd.js)
+jouiuiui
+============================================================================================================================
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+lister les tecnologies dans la page qll technologie (partie1)
+============================================================================================================================
+react_devtools_backend_compact.js:2367 Warning: Each child in a list should have a unique "key" prop. 
+pour cooriger cette erreur il faut : 
+--> npm install uuid
+--> import {v4 as uuidv4 } from "uuid";
+--> setTechnos([...technos,  **{...techno, technoid : uuidv4() }] **); dans la fonction handleAddtechnos dans APP.js
+-->  <div key={techno.technoid}> dans alltecchnos
+par ailleuirs nous avons creer un composant technoitem qui va permettre d'afficher les technologies qu'on aurait a ajouter
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+============================================================================================================================
+ nous avons utilser uselocal storage pour stocker en local nos donne 

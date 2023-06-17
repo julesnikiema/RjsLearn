@@ -5,7 +5,7 @@ import Technoitem from '../components/Technoitem';
 
 
 const AllTechnos = (props) => {
-    const { technos } = props;
+    const { technos, handleDelete } = props;
   
     return (
       <div className="techno-list">
@@ -14,7 +14,7 @@ const AllTechnos = (props) => {
         <div>
         {
   technos.map(techno => (
-   <Technoitem techno = {techno} key = {techno.technoid} />
+   <Technoitem techno = {techno} key = {techno.technoid}  handleDelete={handleDelete} />
   ))
 }
 
