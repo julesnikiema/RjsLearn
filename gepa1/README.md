@@ -1,3 +1,6 @@
+..// le lien de la video 
+..// https://www.youtube.com/watch?v=7KC8QQXXN1M&t=6241s
+
 
 a cet niveau nous avons avons crees les 3pages mais sans le react router dom 
 creer un repertoire css dans lequel nous aurons nos css, et app.css dans le repertoire ou nous allons importer les css
